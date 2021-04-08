@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend de So Pekocko",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romainmontagnon/OC_RomainMontagnon_6_08042021.git"
+  },
+  "author": "Romain Montagnon for OpenClassrooms",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romainmontagnon/OC_RomainMontagnon_6_08042021/issues"
+  },
+  "homepage": "https://github.com/romainmontagnon/OC_RomainMontagnon_6_08042021#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "mongoose-unique-validator": "^2.0.3"
+  }
+}
