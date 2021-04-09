@@ -29,6 +29,15 @@ Toutes les routes relatives à la sauce doivent exiger une demande authentifiée
 | __#7__ | `'DELETE'` | `/api/sauces/:id`      | -                                     | `{ message : Chaîne }` | Supprime la sauce avec l'ID fourni. |
 | __#8__ | `'POST'`   | `/api/sauces/:id/like` | `{ userId: Chaîne, j'aime : Nombre }` | `{ message : Chaîne }` | Définit le statut "j'aime" pour userID fourni. Si j'aime = 1, l'utilisateur aime la sauce. Si j'aime = 0, l'utilisateur annule ce qu'il aime ou ce qu'il n'aime pas. Si j'aime = -1, l'utilisateur n'aime pas la sauce. L'identifiant de l'utilisateur doit être ajouté ou supprimé du tableau approprié, en gardant une trace de ses préférences et en l'empêchant d'aimer ou de ne pas aimer la même sauce plusieurs fois. Nombre total de "j'aime" et de "je n'aime pas" à mettre à jour avec chaque "j'aime". |
 
+- [ ] __#1__
+- [ ] __#2__
+- [ ] __#3__
+- [ ] __#4__
+- [ ] __#5__
+- [ ] __#6__
+- [ ] __#7__
+- [ ] __#8__
+
 ## Modèle de données
 
 ### Sauce
@@ -72,9 +81,12 @@ Le nombre de likes/dislikes et les tableaux like/dislike doivent être mis à jo
 
 ## Composant nodeJS utilisé
 
-- [ ] express
-- [ ] mongoose
-- [ ] mongoose-unique-validator
+- [x] express
+- [x] mongoose
+- [x] mongoose-unique-validator
+- [x] body-parser
+- [x] bcrypt
+- [x] jsonwebtoken
 
 ## Création de fichier
 
@@ -87,3 +99,28 @@ Le nombre de likes/dislikes et les tableaux like/dislike doivent être mis à jo
 - `user.js`
 
 ### dans `middleware`
+
+## Utilisateurs de test
+
+| user            | password |
+| --------------- | -------- |
+| user1@test.com  |  test1   |
+| user2@test.com  |  test2   |
+| user3@test.com  |  test3   |
+| user4@test.com  |  test4   |
+
+## To Do List
+
+- [x] signin
+- [x] login
+- [ ] token d`authentification
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
+- [ ] sauces
