@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const path = require('path');
 
+const app = express();
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 // const { join } = require('path');
@@ -12,8 +13,6 @@ mongoose.connect('mongodb+srv://bender_rodriguez:Fry3000@cluster0.ejgiy.mongodb.
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
-
-const app = express();
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
