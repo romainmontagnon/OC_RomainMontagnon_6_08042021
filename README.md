@@ -25,12 +25,12 @@ Toutes les routes relatives à la sauce doivent exiger une demande authentifiée
 | __#3__ | `'GET'`    | `/api/sauces`          | -                                     | Tableau des sauces | Renvoie le tableau de toutes les sauces dans la base de données |
 | __#4__ | `'GET'`    | `/api/sauces/:id`      | -                                     | Sauce unique | Renvoie la sauce avec l'ID fourni |
 | __#5__ | `'POST'`   | `/api/sauces`          | `{ sauce : Chaîne, image : Fichier }` | `{ message : Chaîne }` | Capture et enregistre l'image, analyse la sauce en utilisant une chaîne de caractères et l'enregistre dans la base de données, en définissant correctement son image URL. Remet les sauces aimées et celles détestées à 0, et les sauces usersliked et celles usersdisliked aux tableaux vides. |
-| __#6__ | `'PUT'`    | `/api/sauces/:id`      | SOIT Sauce comme JSON OU `{ sauce : Chaîne, image : Fichier }` | `{ message : Chaîne }` | Met à jour la sauce avec l'identifiant fourni. Si une image est téléchargée, capturez-la et mettez à jour l'image URL des sauces. Si aucun fichier n'est fourni, les détails de la sauce figurent directement dans le corps de la demande (req.body.name, req.body.heat etc). Si un fichier est fourni, la sauce avec chaîne est en req.body.sauce. |
+| __#6__ | `'PUT'`    | `/api/sauces/:id`      | SOIT Sauce comme JSON OU `{ sauce : Chaîne, image : Fichier }` | `{ message : Chaîne }` | Met à jour la sauce avec l'identifiant fourni. Si une image est téléchargée, capturez-la et mettez à jour l'image URL des sauces. Si aucun fichier n'est fourni, les détails de la sauce figurent directement dans le corps de la demande (`req.body.name`, `req.body.heat` etc). Si un fichier est fourni, la sauce avec chaîne est en `req.body.sauce`. |
 | __#7__ | `'DELETE'` | `/api/sauces/:id`      | -                                     | `{ message : Chaîne }` | Supprime la sauce avec l'ID fourni. |
-| __#8__ | `'POST'`   | `/api/sauces/:id/like` | `{ userId: Chaîne, j'aime : Nombre }` | `{ message : Chaîne }` | Définit le statut "j'aime" pour userID fourni. Si j'aime = 1, l'utilisateur aime la sauce. Si j'aime = 0, l'utilisateur annule ce qu'il aime ou ce qu'il n'aime pas. Si j'aime = -1, l'utilisateur n'aime pas la sauce. L'identifiant de l'utilisateur doit être ajouté ou supprimé du tableau approprié, en gardant une trace de ses préférences et en l'empêchant d'aimer ou de ne pas aimer la même sauce plusieurs fois. Nombre total de "j'aime" et de "je n'aime pas" à mettre à jour avec chaque "j'aime". |
+| __#8__ | `'POST'`   | `/api/sauces/:id/like` | `{ userId: Chaîne, j'aime : Nombre }` | `{ message : Chaîne }` | Définit le statut __"j'aime"__ pour `userID` fourni. __Si j'aime = 1__, l'utilisateur aime la sauce. __Si j'aime = 0__, l'utilisateur annule ce qu'il aime ou ce qu'il n'aime pas. __Si j'aime = -1__, l'utilisateur n'aime pas la sauce. L'identifiant de l'utilisateur doit être ajouté ou supprimé du tableau approprié, en gardant une trace de ses préférences et en l'empêchant d'aimer ou de ne pas aimer la même sauce plusieurs fois. Nombre total de "j'aime" et de "je n'aime pas" à mettre à jour avec chaque "j'aime". |
 
-- [ ] __#1__
-- [ ] __#2__
+- [x] __#1__
+- [x] __#2__
 - [ ] __#3__
 - [ ] __#4__
 - [ ] __#5__
