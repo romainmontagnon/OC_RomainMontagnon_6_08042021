@@ -1,4 +1,5 @@
 const Sauce = require ('../models/sauce.js');
+const bodyParser = require('body-parser');
 
 exports.getAllSauce = (req, res, next) => {
     Sauce.find()

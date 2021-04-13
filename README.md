@@ -124,3 +124,21 @@ Le nombre de likes/dislikes et les tableaux like/dislike doivent être mis à jo
 - [ ] sauces
 - [ ] sauces
 - [ ] sauces
+
+## Modification code
+
+- Suppression du middleware `body-parser` au profit de `express`
+ainsi, dans `app.js` :
+
+```javascript
+//les lignes sont supprimées :
+// en tete de fichier
+const bodyParser = require('body-parser');
+// en bas de fichier
+app.use(bodyParser.json());
+
+//au profit de, en tete de fichier :
+const express = require('express');
+// qui est normalemet deja 'require' pour d'autres fonctionnalités, et, en bas de fichier :
+app.use(express.json());
+```
