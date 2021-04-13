@@ -1,12 +1,12 @@
 const express = require('express');
 // const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const path = require('path');
+const path = require('path');
 
 const app = express();
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
-// const { join } = require('path');
+const { join } = require('path');
 
 mongoose.connect('mongodb+srv://bender_rodriguez:Fry3000@cluster0.ejgiy.mongodb.net/piquante?authSource=admin&replicaSet=atlas-6bscut-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true',
   { useNewUrlParser: true,
@@ -31,8 +31,10 @@ app.use(function (req, res, next) {
 // app.use(bodyParser.json());
 app.use(express.json());
 
-app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes);
-// app.use('/images', express.static(path.join(__dirname, 'images')));
+
+app.use('/api/sauces', sauceRoutes);
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;

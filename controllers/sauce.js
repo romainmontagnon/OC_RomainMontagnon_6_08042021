@@ -47,7 +47,8 @@ exports.createSauce = (req, res, next) => {
             (error) => {
                 res.status(400).json({error});
             }
-        );
+        )
+    ;
 };
 
 exports.modifySauce = (req, res, next) => {
