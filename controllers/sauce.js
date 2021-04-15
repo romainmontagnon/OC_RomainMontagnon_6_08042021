@@ -34,7 +34,8 @@ exports.getOneSauce = (req, res, next) => {
 exports.createSauce = (req, res, next) => {
 //    delete req.body._id;
     const sauce = new Sauce({
-        ...req.body
+        ...JSON.parse(req.body.sauce),
+        imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     });
     console.log(sauce);
     sauce.save()
@@ -50,6 +51,13 @@ exports.createSauce = (req, res, next) => {
         )
     ;
 };
+
+// function () {
+//     fonction anonyme
+//     notion de this
+// };
+
+// function ()
 
 exports.modifySauce = (req, res, next) => {
 

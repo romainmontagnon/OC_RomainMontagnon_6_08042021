@@ -1,7 +1,7 @@
 const express = require('express');
-// const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 const sauceRoutes = require('./routes/sauce');
@@ -21,14 +21,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Création d’un middleware qui va afficher le corps de la requête.  
-app.use(function (req, res, next) {  
-  console.log(req.body);  
-  next();  
-});
-
 // Prise en charge du format JSON
-// app.use(bodyParser.json());
 app.use(express.json());
 
 app.use('/api/auth', userRoutes);
