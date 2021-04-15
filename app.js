@@ -8,7 +8,7 @@ const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const { join } = require('path');
 
-mongoose.connect('mongodb+srv://bender_rodriguez:Fry3000@cluster0.ejgiy.mongodb.net/piquante?authSource=admin&replicaSet=atlas-6bscut-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true',
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ejgiy.mongodb.net/piquante?authSource=admin&replicaSet=atlas-6bscut-shard-0&readPreference=primary&appname=${process.env.DB_APP_NAME}&ssl=true`,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))

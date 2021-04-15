@@ -2,18 +2,17 @@
 
 [TOC]
 
-## Variable d'environnement avec __`dotenv`__
+## Variable d'environnement avec `dotenv`
 
-| Variables  |                                 |
-|----------  |-------------------------------- |
-| TOKEN_KEY  | \<clef d'emcryptage du token>   |
-| HASH_ROUND | \<nombre de rounded salt>       |
-| DB_USER    | |
-| DB_PASS    | |
-| DB_
+`process.env.MY_VAR`
 
-nomnre de hash
-info connect mongoose
+| Variables    |    Scope                          |
+|------------- |---------------------------------- |
+| `TOKEN_KEY`  | clef d'encryptage du token        |
+| `HASH_ROUND` | nombre de rounded salt            |
+| `DB_USER`    | Identifiant de la base de donnee  |
+| `DB_PASS`    | Mot de passe de la base de donnee |
+|`DB_APP_NAME` | App de la base de donnee          |
 
 ## Utilisateurs de test
 
