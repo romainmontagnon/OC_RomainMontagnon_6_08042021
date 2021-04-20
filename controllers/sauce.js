@@ -24,7 +24,9 @@ exports.getOneSauce = (req, res, next) => {
 exports.createSauce = (req, res, next) => {
     const sauce = new Sauce({
         ...JSON.parse(req.body.sauce),
-        imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+        imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+        usersLiked: '',
+        usersDisLiked: ''
     });
     sauce.save()
             .then(() => {
@@ -72,17 +74,25 @@ exports.deleteSauce = (req, res, next) => {
 exports.likedSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then((_id) => {
-            let like = req.body.like;
-            //test si user(dis)Liked existant si oui 
+            let object          = _id._doc;
+            let usersLiked      = _id._doc.usersLiked;
+            let usersDisLiked   = _id._doc.usersDisLiked;
+
+            let userId  = req.body.userId;
+            let like    = req.body.like;
+
+            //Verifier si le userId est présent dans usersLiked ou dans usersDisLiked
+            //puis en fonction ajouter un non 1
+
             switch (like) {
                 case 1 :
-                    console.log("Like = 1");
+                    console.log(`User ${userId} set LIKE to 1 for object ${object.name}`);
                     break;
                 case -1 :
-                    console.log("Like = -1");
+                    console.log(`User ${userId} set LIKE to -1 for object ${object.name}`);
                     break;
                 case 0 :
-                    console.log("Like = 0");
+                    console.log(`User ${userId} set LIKE to 0 for object ${object.name}`);
                     break;
                 default:
                 res.status(400);
