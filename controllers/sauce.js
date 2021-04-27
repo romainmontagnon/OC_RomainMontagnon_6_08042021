@@ -92,7 +92,7 @@ exports.likedSauce = (req, res, next) => {
                         sauce.likes--;
                         sauce.usersLiked = sauce.usersLiked.filter(userId => userId != req.body.userId);
                         // filter() garde tous les elements sauf celui vise, retourne un nouveau tableau 'filtrer'
-                    } else {
+                    } else if (sauce.usersDisLiked.some(userId => userId == req.body.userId)) {
                         sauce.dislikes--;
                         sauce.usersDisLiked = sauce.usersDisLiked.filter(userId => userId != req.body.userId);
                         // filter() garde tous les elements sauf celui vise, retourne un nouveau tableau 'filtrer'
