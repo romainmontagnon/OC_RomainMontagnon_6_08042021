@@ -82,8 +82,8 @@ exports.likedSauce = (req, res, next) => {
                     break;
                 case -1:
                     console.log(`User ${req.body.userId} set LIKE to -1 for object ${sauce.name}`);
-                    // ajouter userId dans usersDisLiked
-                    sauce.usersDisLiked.push(req.body.userId);
+                    // ajouter userId dans usersDisliked
+                    sauce.usersDisliked.push(req.body.userId);
                     sauce.dislikes++;
                     break;
                 case 0:
@@ -92,9 +92,9 @@ exports.likedSauce = (req, res, next) => {
                         sauce.likes--;
                         sauce.usersLiked = sauce.usersLiked.filter(userId => userId != req.body.userId);
                         // filter() garde tous les elements sauf celui vise, retourne un nouveau tableau 'filtrer'
-                    } else if (sauce.usersDisLiked.some(userId => userId == req.body.userId)) {
+                    } else if (sauce.usersDisliked.some(userId => userId == req.body.userId)) {
                         sauce.dislikes--;
-                        sauce.usersDisLiked = sauce.usersDisLiked.filter(userId => userId != req.body.userId);
+                        sauce.usersDisliked = sauce.usersDisliked.filter(userId => userId != req.body.userId);
                         // filter() garde tous les elements sauf celui vise, retourne un nouveau tableau 'filtrer'
                     }
                     break;
