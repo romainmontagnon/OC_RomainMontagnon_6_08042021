@@ -33,18 +33,17 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
 //Body parser, lit les data du body dans req.body
 app.use(express.json());
-//chemin d'enregistrement des photos
-app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //validation des données contre injection SQL
 app.use(mongoSanitize());
 
 //Validation des données contre faille XSS
 app.use(xss());
+
+//chemin d'enregistrement des photos traitement des images
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //route d'authentification
 app.use('/api/auth', userRoutes);
